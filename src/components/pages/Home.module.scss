@@ -113,117 +113,37 @@
 
         img {
           width: 100%;
+          max-width: 300px; // Ограничение максимальной ширины
+          height: auto; // Сохранение пропорций
           object-fit: cover;
           border-radius: 12px;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
       }
     }
-  }
-}
-@media (max-width: 1200px) {
-  .welcome .content {
-    gap: 300px;
 
-    .left {
-      align-items: start;
-      .text {
-        font-size: clamp(24px, 5vw, 36px);
-      }
-      .button {
-        button {
-          font-size: 14px;
-          padding: 8px 16px;
-        }
-      }
-    }
-
-    .right {
-      .book {
-        transform: translateX(50%) scale(0.8);
-
-        &.center {
-          transform: translateX(0) scale(1);
-        }
-
-        &.left {
-          transform: translateX(-50%) scale(0.7);
-        }
-
-        &.right {
-          transform: translateX(50%) scale(0.7);
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .welcome {
-    padding: 100px 0;
-    margin-bottom: 0;
-    background: url("https://plus.unsplash.com/premium_photo-1701534008693-0eee0632d47a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D")
-      no-repeat center center;
-    background-size: cover;
-    height: 70vh;
-    .content {
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      height: auto;
-      background: none;
-      .left {
-        align-items: center;
-        gap: 20px;
-        .text {
-          p {
-            text-align: center;
-            color: #ffffff;
-          }
-        }
-        .tools {
-          display: flex;
-          gap: 10px;
-          a {
-            padding: 5px 10px;
-            font-size: 12px;
-          }
-        }
-        .button button {
-          font-size: 12px;
-          padding: 6px 12px;
-        }
-      }
-
+    /* 📱 Адаптивность для планшетов */
+    @media (max-width: 768px) {
       .right {
-        display: none;
-      }
-    }
-  }
-}
+        .book {
+          width: 250px;
 
-@media (max-width: 480px) {
-  .welcome .content {
-    margin-bottom: 0;
-
-    .left {
-      .text {
-        font-size: clamp(18px, 5vw, 24px);
-      }
-      .tools a {
-        font-size: 7px;
-      }
-      .button button {
-        font-size: 10px;
+          img {
+            max-width: 250px;
+          }
+        }
       }
     }
 
-    .right {
-      display: none;
-      .book {
-        img {
-          max-width: 120px;
-          height: auto;
+    /* 📱 Адаптивность для мобильных */
+    @media (max-width: 480px) {
+      .right {
+        .book {
+          width: 150px;
+
+          img {
+            max-width: 150px;
+          }
         }
       }
     }
