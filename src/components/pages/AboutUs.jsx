@@ -3,6 +3,7 @@ import scss from "./About.module.scss";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import donPhoto from "../../image/7a8a5eb1-a85f-497c-894f-ea7ab646c956.jpeg";
 import kamaPhoto from "../../image/6f1b38ef-3221-446b-87a8-fb9efc995fbd.jpeg";
+import talgatPhoto from "../../image/fc4c9e99-d2f9-48b1-9b34-31eb636e2fc8.jpeg";
 import { Tooltip } from "@mui/material";
 
 const AboutUs = () => {
@@ -45,7 +46,7 @@ const AboutUs = () => {
           </div>
           <div className={scss.content3}>
             <div className={scss.card}>
-              <img src="" alt="Profile" />
+              <img src={talgatPhoto} alt="Profile" />
               <p>Тулобаев Талгат</p>
               <p>Frontend Developer</p>
               <Tooltip title="Инстаграмм">
