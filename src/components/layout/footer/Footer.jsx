@@ -3,6 +3,7 @@ import scss from "./Footer.module.scss";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import CommentBox from "../../coments/Comment";
 
 const Footer = () => {
   return (
@@ -85,6 +86,7 @@ const Footer = () => {
                 <TelegramIcon /> Telegram
               </a>
             </div>
+            <CommentBox />
           </div>
 
           <div className={scss.copyright}>

@@ -27,6 +27,7 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
 const AuthContext = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   const [state, dispatch] = useReducer(reducer, initialState);
