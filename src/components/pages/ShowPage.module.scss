@@ -1,0 +1,110 @@
+#page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 20px;
+
+  .box {
+    background-color: #e2e2e2;
+    border-radius: 15px;
+    padding-block: 15px;
+    padding-inline: 10px;
+  }
+
+  .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      max-width: 450px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .information {
+      max-width: 550px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #e2e2e2;
+      padding: 30px 20px;
+      border-radius: 10px;
+
+      h5 {
+        font-size: 20px;
+        font-weight: 500;
+        color: rgb(69, 68, 68);
+      }
+
+      h2 {
+        font-weight: 700;
+        font-size: 30px;
+        color: black;
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 20px;
+        line-height: 29px;
+        font-weight: 500;
+        color: black;
+      }
+
+      .price {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid rgb(190, 190, 190);
+        color: black;
+
+        div {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          img {
+            width: 30px;
+            height: 30px;
+            border: 50%;
+          }
+
+          h3 {
+            font-weight: 500;
+          }
+        }
+
+        h3 {
+          font-weight: 700;
+        }
+      }
+
+      .price:hover {
+        border: 1px solid rgb(56, 56, 56);
+        cursor: pointer;
+      }
+
+      .basketButton {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 20px;
+        button {
+          padding: 10px 20px;
+          color: rgb(255, 255, 255);
+          background-color: rgb(18, 18, 18);
+          border: none;
+          font-size: 20px;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+#box {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .inputBox {
+      max-width: 500px;
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid rgba(224, 224, 224, 0.5);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 15px;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(64, 224, 208, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(64, 224, 208, 0.4);
+      }
+    }
+
+    h1 {
+      font-size: clamp(1.563rem, 1.449rem + 0.57vw, 1.875rem);
+      color: #1a237e;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: float 3s ease-in-out infinite;
+
+      gap: 10px;
+
+      &::after {
+        content: "📚";
+        font-size: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    }
+
+    button {
+      margin-top: 15px;
+      width: clamp(11.875rem, 10.966rem + 4.55vw, 14.375rem);
+      padding: 15px 0px;
+      font-size: clamp(0.938rem, 0.869rem + 0.34vw, 1.125rem);
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      transition: 0.3s;
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .add {
+      background: linear-gradient(45deg, #008080, #00ced1);
+      color: #fff;
+
+      &:hover {
+        background: linear-gradient(45deg, #00ced1, #008080);
+      }
+
+      &:active {
+        background: linear-gradient(45deg, #008080, #00ced1);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .inputBox {
+      padding: 30px 20px;
+      max-width: 90%;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}

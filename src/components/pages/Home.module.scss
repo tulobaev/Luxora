@@ -1,0 +1,231 @@
+.welcome {
+  height: 100vh;
+  width: 100%;
+
+  .content {
+    padding: 50px 0px;
+    width: 100%;
+    height: 850px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 500px;
+    @media (max-width: 1400px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 300px;
+    }
+
+    .left {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      justify-content: start;
+      gap: 30px;
+      .text {
+        p {
+          width: 100%;
+          max-width: 400px;
+          font-size: clamp(20px, 4vw, 30px);
+          font-weight: 700;
+        }
+      }
+      .tools {
+        a {
+          color: #ff7d00;
+          text-decoration: none;
+          padding: 5px 15px;
+          border-radius: 20px;
+          border: 2px solid #2652b0;
+          white-space: nowrap;
+        }
+      }
+      button {
+        margin-top: 15px;
+        width: 250px;
+        padding: 13px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 8px;
+        border: none;
+        transition: 0.3s;
+        color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .add {
+        background: linear-gradient(45deg, #008080, #00ced1);
+        color: #fff;
+
+        &:hover {
+          background: linear-gradient(45deg, #00ced1, #008080);
+        }
+
+        &:active {
+          background: linear-gradient(45deg, #008080, #00ced1);
+        }
+      }
+    }
+
+    .right {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      .book {
+        position: absolute;
+        opacity: 0;
+        transform: translateX(100%) scale(0.8);
+        transition: all 2s ease-in-out;
+        width: 300px;
+
+        &.center {
+          transform: translateX(0) scale(1.1);
+          opacity: 1;
+          z-index: 2;
+        }
+
+        &.left {
+          transform: translateX(-100%) scale(0.8);
+          opacity: 0.7;
+          z-index: 1;
+        }
+
+        &.right {
+          transform: translateX(100%) scale(0.8);
+          opacity: 0.7;
+          z-index: 1;
+        }
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          border-radius: 12px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .welcome .content {
+    gap: 300px;
+
+    .left {
+      align-items: start;
+      .text {
+        font-size: clamp(24px, 5vw, 36px);
+      }
+      .button {
+        button {
+          font-size: 14px;
+          padding: 8px 16px;
+        }
+      }
+    }
+
+    .right {
+      .book {
+        transform: translateX(50%) scale(0.8);
+
+        &.center {
+          transform: translateX(0) scale(1);
+        }
+
+        &.left {
+          transform: translateX(-50%) scale(0.7);
+        }
+
+        &.right {
+          transform: translateX(50%) scale(0.7);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    padding: 100px 0;
+    margin-bottom: 0;
+    background: url("https://plus.unsplash.com/premium_photo-1701534008693-0eee0632d47a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D")
+      no-repeat center center;
+    background-size: cover;
+    height: 70vh;
+    .content {
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      height: auto;
+      background: none;
+      .left {
+        align-items: center;
+        gap: 20px;
+        .text {
+          p {
+            text-align: center;
+            color: #ffffff;
+          }
+        }
+        .tools {
+          display: flex;
+          gap: 10px;
+          a {
+            padding: 5px 10px;
+            font-size: 12px;
+          }
+        }
+        .button button {
+          font-size: 12px;
+          padding: 6px 12px;
+        }
+      }
+
+      .right {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome .content {
+    margin-bottom: 0;
+
+    .left {
+      .text {
+        font-size: clamp(18px, 5vw, 24px);
+      }
+      .tools a {
+        font-size: 7px;
+      }
+      .button button {
+        font-size: 10px;
+      }
+    }
+
+    .right {
+      display: none;
+      .book {
+        img {
+          max-width: 120px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
