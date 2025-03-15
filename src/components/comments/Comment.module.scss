@@ -1,0 +1,129 @@
+.comment_box {
+  width: 300px;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 5px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  color: #040414;
+
+  .comment {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .delete_button {
+      max-height: 15px;
+      margin-left: 8px;
+      color: black;
+      border: none;
+      background: none;
+      cursor: pointer;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  max-width: 225px;
+  padding: 5px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+
+  &:focus {
+    border-color: #040414;
+  }
+}
+
+.submit_button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #040414;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #333;
+  }
+
+  &:active {
+    background-color: #000;
+  }
+}
+
+@media (max-width: 1200px) {
+  .comment_box {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .input {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .submit_button {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .inputBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .comment_box {
+    height: 50px;
+    .comment {
+      font-size: 13px;
+    }
+
+    .input {
+      font-size: 13px;
+    }
+
+    .submit_button {
+      font-size: 13px;
+      padding: 8px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .comment_box {
+    .comment {
+      font-size: 12px;
+    }
+
+    .input {
+      font-size: 12px;
+    }
+
+    .submit_button {
+      font-size: 12px;
+      padding: 8px;
+    }
+  }
+}

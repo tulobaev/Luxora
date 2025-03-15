@@ -1,5 +1,4 @@
 .welcome {
-  height: 100vh;
   width: 100%;
 
   .content {
@@ -11,6 +10,7 @@
     justify-content: start;
     gap: 500px;
     @media (max-width: 1400px) {
+      margin-top: 50px;
       flex-direction: column;
       align-items: center;
       gap: 300px;
@@ -122,8 +122,6 @@
 }
 @media (max-width: 1200px) {
   .welcome .content {
-    gap: 300px;
-
     .left {
       align-items: start;
       .text {

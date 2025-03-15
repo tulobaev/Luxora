@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./Cmment.css";
 import DeleteIcon from "@mui/icons-material/Delete";
+import scss from "./Comment.module.scss";
 
 const CommentBox = () => {
   const [comments, setComments] = useState([]);
@@ -23,13 +23,13 @@ const CommentBox = () => {
   };
 
   return (
-    <div>
-      <div className="comment-box">
+    <div id={scss.box}>
+      <div className={scss.comment_box}>
         {comments.map((comment, index) => (
-          <div key={index} className="comment">
+          <div key={index} className={scss.comment}>
             {comment}
             <button
-              className="delete-button"
+              className={scss.delete_button}
               onClick={() => handleDeleteComment(index)}
             >
               <DeleteIcon />
@@ -38,19 +38,21 @@ const CommentBox = () => {
         ))}
       </div>
 
-      <input
-        type="text"
-        value={newComment}
-        onChange={handleInputChange}
-        onKeyUp={(e) => {
-          if (e.key === "Enter") handleCommentSubmit();
-        }}
-        placeholder="Напишите комментарий..."
-        className="input"
-      />
-      <button onClick={handleCommentSubmit} className="submit-button">
-        Добавить
-      </button>
+      <div className={scss.inputBox}>
+        <input
+          type="text"
+          value={newComment}
+          onChange={handleInputChange}
+          onKeyUp={(e) => {
+            if (e.key === "Enter") handleCommentSubmit();
+          }}
+          placeholder="Напишите комментарий..."
+          className={scss.input}
+        />
+        <button onClick={handleCommentSubmit} className={scss.submit_button}>
+          Добавить
+        </button>
+      </div>
     </div>
   );
 };

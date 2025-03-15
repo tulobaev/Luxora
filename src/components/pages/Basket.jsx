@@ -26,7 +26,7 @@ const Basket = () => {
       <div className="container">
         <div className={scss.totalPrice}>
           <h2>
-            В корзине {basket.length} товара на {totalPrice} сом
+            В корзине {basket.length} товар на {totalPrice} сом
           </h2>
         </div>
         <div className={scss.product}>

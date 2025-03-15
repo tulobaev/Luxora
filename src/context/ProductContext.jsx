@@ -195,7 +195,6 @@ const ProductContext = ({ children }) => {
       });
     }
   }
-
   //! FILTER
 
   const values = {

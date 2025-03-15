@@ -3,7 +3,7 @@ import scss from "./Footer.module.scss";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import CommentBox from "../../coments/Comment";
+import CommentBox from "../../comments/Comment";
 
 const Footer = () => {
   return (
@@ -11,9 +11,11 @@ const Footer = () => {
       <footer className={scss.footer}>
         <div className="container">
           <div className={scss.footerContent}>
-            <div className={scss.logo}>
-              <h2>Ми</h2>
-              <span className={scss.bes}>∞</span>
+            <div>
+              <div className={scss.logo}>
+                <h2>Ми</h2>
+                <span className={scss.bes}>∞</span>
+              </div>
             </div>
 
             <div className={scss.aboutUs}>
@@ -86,6 +88,10 @@ const Footer = () => {
                 <TelegramIcon /> Telegram
               </a>
             </div>
+          </div>
+
+          {/* Блок с CommentBox */}
+          <div className={scss.commentBoxWrapper}>
             <CommentBox />
           </div>
 

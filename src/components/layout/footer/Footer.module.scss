@@ -1,5 +1,4 @@
 #footer {
-  padding-top: 150px;
   .footer {
     background: #222;
     color: #fff;
@@ -9,8 +8,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: flex-start;
       gap: 20px;
+      padding: 0 20px;
 
       .logo {
         display: flex;
@@ -48,6 +47,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        flex: 1 1 200px;
       }
 
       h3 {
@@ -65,10 +65,6 @@
         color: #fff;
       }
 
-      .TelegramIcon {
-        display: flex;
-        align-items: center;
-      }
       .TelegramIcon:hover {
         color: rgb(60, 60, 251);
         font-weight: 500;
@@ -88,6 +84,10 @@
       }
     }
 
+    .commentBoxWrapper {
+      margin-top: 30px;
+    }
+
     .copyright {
       text-align: center;
       margin-top: 50px;
@@ -100,5 +100,111 @@
         margin-top: 10px;
       }
     }
+  }
+}
+
+@media (max-width: 1200px) {
+  #footer .footer .footerContent {
+    margin-top: 0px;
+    gap: 30px;
+    padding: 0 15px;
+
+    .logo {
+      flex-basis: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .aboutUs,
+    .partners,
+    .contacts,
+    .socials {
+      flex-basis: calc(50% - 20px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #footer {
+    padding-top: 100px;
+
+    .footer .footerContent {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .logo {
+        h2 {
+          font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+        }
+
+        .bes {
+          font-size: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+        }
+      }
+
+      .aboutUs,
+      .partners,
+      .contacts,
+      .socials {
+        flex-basis: 100%;
+        align-items: center;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      p,
+      a {
+        font-size: 0.9rem;
+      }
+    }
+
+    .commentBoxWrapper {
+      order: 1;
+      margin-top: 20px;
+    }
+
+    .copyright {
+      order: 2;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #footer .footer .footerContent {
+    gap: 20px;
+
+    .logo {
+      h2 {
+        font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem);
+      }
+
+      .bes {
+        font-size: clamp(2rem, 1.5rem + 2vw, 2.5rem);
+      }
+    }
+
+    .aboutUs,
+    .partners,
+    .contacts,
+    .socials {
+      gap: 8px;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    p,
+    a {
+      font-size: 0.8rem;
+    }
+  }
+
+  .copyright {
+    font-size: 0.75rem;
   }
 }
