@@ -11,10 +11,8 @@ const Basket = () => {
   const [count, setCount] = useState(1);
 
   useEffect(() => {
-    if (Array.isArray(basket)) {
-      const newTotalPrice = basket.reduce((acc, item) => acc + item.price, 0);
-      setTotalPrice(newTotalPrice);
-    }
+    const newTotalPrice = basket.reduce((acc, item) => acc + item.price, 0);
+    setTotalPrice(newTotalPrice);
   }, [basket]);
 
   useEffect(() => {
