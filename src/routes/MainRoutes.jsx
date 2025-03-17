@@ -9,8 +9,10 @@ import Admin from "../components/pages/Admin";
 import ShowPage from "../components/pages/ShowPage";
 import ShowLike from "../components/pages/ShowLike";
 import Basket from "../components/pages/Basket";
+import { useAuth } from "../context/AuthContext";
 
 const MainRoutes = () => {
+  const { user } = useAuth();
   const routes = [
     {
       link: "/",
@@ -18,19 +20,9 @@ const MainRoutes = () => {
       id: 1,
     },
     {
-      link: "/admin",
-      element: <Admin />,
-      id: 2,
-    },
-    {
       link: "/signUp",
       element: <Register />,
       id: 4,
-    },
-    {
-      link: "/edit/:id",
-      element: <EditProduct />,
-      id: 5,
     },
     {
       link: "/books",
@@ -58,11 +50,31 @@ const MainRoutes = () => {
       id: 10,
     },
   ];
+
+  const privateRoute = [
+    {
+      link: "/admin",
+      element: <Admin />,
+      id: 2,
+    },
+    {
+      link: "/edit/:id",
+      element: <EditProduct />,
+      id: 5,
+    },
+  ];
   return (
     <Routes>
       {routes.map((item) => (
         <Route path={item.link} element={item.element} key={item.id} />
       ))}
+      {user
+        ? user.email === "talgattulobaev519@gmail.com"
+          ? privateRoute.map((item) => (
+              <Route path={item.link} element={item.element} key={item.id} />
+            ))
+          : null
+        : null}
     </Routes>
   );
 };
